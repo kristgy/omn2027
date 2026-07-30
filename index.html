@@ -8,6 +8,7 @@
   <!-- SEO & Social Meta Tags -->
   <meta name="description" content="Official website for OMN 2027 — The International Conference on Optical MEMS and Nanophotonics, taking place in Stockholm, Sweden, June 20-24, 2027. Chair: Stockholm Conference Committee.">
   <meta name="keywords" content="OMN 2027, Optical MEMS, Nanophotonics, Photonic Integrated Circuits, Quantum Optics, Metamaterials, Stockholm Conference, KTH">
+  <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="OMN 2027 — International Conference on Optical MEMS and Nanophotonics">
   <meta property="og:description" content="Join global leaders in Optical MEMS & Nanophotonics in Stockholm, Sweden, June 20-24, 2027.">
   <meta property="og:image" content="images/jann_lipka-summer_in_the_city-12030-10.jpg">
@@ -599,10 +600,34 @@
     </div>
   </footer>
 
-  <!-- Toast Notification element -->
-  <div class="toast-notification" id="toast">
-    <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); font-size: 1.25rem;"></i>
-    <span id="toast-text">Thank you! You are now subscribed to OMN 2027 updates.</span>
+  <!-- Passcode Lock Modal (For Preview / Staging Review) -->
+  <div class="passcode-modal" id="passcode-modal">
+    <div class="passcode-box">
+      <div class="brand-logo" style="justify-content: center; margin-bottom: 1.25rem;">
+        <span>OMN <span class="gradient-text">2027</span></span>
+        <span class="brand-badge">Staging</span>
+      </div>
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; text-align: center;">Committee Preview Mode</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center; margin-bottom: 1.75rem;">
+        This page is currently undergoing committee review. Enter the preview passcode to unlock:
+      </p>
+
+      <form id="passcode-form" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="position: relative;">
+          <input type="password" id="passcode-input" placeholder="Enter preview passcode..." required autofocus
+            style="width: 100%; padding: 0.85rem 1.25rem; background: rgba(7, 10, 18, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-full); color: var(--text-primary); font-family: inherit; font-size: 1rem; outline: none; text-align: center;">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <i class="fa-solid fa-lock-open"></i> Unlock Preview
+        </button>
+        <div id="passcode-error" style="color: #ef4444; font-size: 0.85rem; text-align: center; display: none;">
+          <i class="fa-solid fa-triangle-exclamation"></i> Incorrect passcode. Please try again.
+        </div>
+      </form>
+      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.78rem; color: var(--text-muted);">
+        Stockholm, Sweden • June 20–24, 2027
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
