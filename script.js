@@ -1,11 +1,6 @@
 /* OMN 2027 Stockholm Conference - Interactive Features */
 
-// Staging & Preview Mode Configuration
-const PREVIEW_MODE = true; // Set to false when officially launching public site!
-const PREVIEW_PASSCODE = "OMN2027"; // Change this to your committee password
-
 document.addEventListener('DOMContentLoaded', () => {
-  initPasscodeProtection();
   initCountdown();
   initHeroSlideshow();
   initNavigation();
@@ -13,45 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendarGenerator();
   initSubscribeForm();
 });
-
-/* ----------------------------------------------------
-   0. Preview Passcode Protection (Staging Review)
----------------------------------------------------- */
-function initPasscodeProtection() {
-  const modal = document.getElementById('passcode-modal');
-  const form = document.getElementById('passcode-form');
-  const input = document.getElementById('passcode-input');
-  const errorEl = document.getElementById('passcode-error');
-  const box = document.querySelector('.passcode-box');
-
-  if (!modal) return;
-
-  // Check if preview mode is disabled or user already authenticated in session
-  if (!PREVIEW_MODE || sessionStorage.getItem('omn2027_preview_unlocked') === 'true') {
-    modal.classList.add('unlocked');
-    return;
-  }
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const entered = input.value.trim();
-
-      if (entered === PREVIEW_PASSCODE) {
-        sessionStorage.setItem('omn2027_preview_unlocked', 'true');
-        modal.classList.add('unlocked');
-      } else {
-        errorEl.style.display = 'block';
-        if (box) {
-          box.classList.add('shake');
-          setTimeout(() => box.classList.remove('shake'), 400);
-        }
-        input.value = '';
-        input.focus();
-      }
-    });
-  }
-}
 
 
 /* ----------------------------------------------------
