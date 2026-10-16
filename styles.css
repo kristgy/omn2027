@@ -1,7 +1,5 @@
 /* OMN 2027 Stockholm Conference - Design System & Stylesheet */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
 :root {
   /* Color System */
   --bg-dark: #070a12;

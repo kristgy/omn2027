@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initSubscribeForm();
 });
 
+window.addEventListener('load', loadDeferredBackgrounds);
+
+/* ----------------------------------------------------
+   0. Deferred Background Images
+   Elements with data-bg get their background only after the page has
+   loaded, so they don't compete with the first hero image.
+---------------------------------------------------- */
+function loadDeferredBackgrounds() {
+  document.querySelectorAll('[data-bg]').forEach(el => {
+    el.style.backgroundImage = `url('${el.dataset.bg}')`;
+  });
+}
 
 /* ----------------------------------------------------
    1. Live Countdown Timer (Target: June 20, 2027 09:00:00)
@@ -86,6 +98,7 @@ function initNavigation() {
   const mobileToggle = document.getElementById('mobile-toggle');
   const navLinks = document.getElementById('nav-links');
   const links = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section');
 
   // Sticky header on scroll
   window.addEventListener('scroll', () => {
@@ -97,7 +110,6 @@ function initNavigation() {
 
     // Scroll spy active highlight
     let current = '';
-    const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 120;
       if (window.scrollY >= sectionTop) {
@@ -111,7 +123,7 @@ function initNavigation() {
         link.classList.add('active');
       }
     });
-  });
+  }, { passive: true });
 
   // Mobile menu drawer toggle
   if (mobileToggle && navLinks) {
