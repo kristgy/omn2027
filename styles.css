@@ -183,15 +183,15 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .brand-mark {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.75rem;
+  height: 3.75rem;
   flex-shrink: 0;
   transition: var(--transition-normal);
 }
 
 .site-header.scrolled .brand-mark {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
 }
 
 .brand-badge {
@@ -1327,8 +1327,8 @@ h1, h2, h3, h4, .font-heading {
 
   .brand-mark,
   .site-header.scrolled .brand-mark {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .nav-actions .btn {
