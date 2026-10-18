@@ -704,8 +704,8 @@ h1, h2, h3, h4, .font-heading {
 
 /* Conference Chairs */
 .chairs-grid {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1140px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -1249,11 +1249,6 @@ h1, h2, h3, h4, .font-heading {
     grid-template-columns: 1fr;
   }
 
-  .chairs-grid {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1319,6 +1314,11 @@ h1, h2, h3, h4, .font-heading {
 
   .subscribe-form {
     flex-direction: column;
+  }
+
+  .chairs-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
   }
 
   .footer-grid {
