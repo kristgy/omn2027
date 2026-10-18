@@ -702,6 +702,13 @@ h1, h2, h3, h4, .font-heading {
   font-weight: bold;
 }
 
+/* Conference Chairs */
+.chairs-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 /* International Steering Committee */
 .steering-committee {
   margin-top: 5rem;
@@ -1240,6 +1247,11 @@ h1, h2, h3, h4, .font-heading {
 
   .steering-grid {
     grid-template-columns: 1fr;
+  }
+
+  .chairs-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
   }
 
   .footer-grid {
