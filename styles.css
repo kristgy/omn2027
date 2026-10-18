@@ -162,6 +162,11 @@ h1, h2, h3, h4, .font-heading {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Wider than the page content so logo, full menu and button fit on one line */
+.site-header .container {
+  max-width: 1440px;
+}
+
 .nav-wrapper {
   display: flex;
   align-items: center;
@@ -175,6 +180,18 @@ h1, h2, h3, h4, .font-heading {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.5rem;
+}
+
+.brand-mark {
+  width: 3.25rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+  transition: var(--transition-normal);
+}
+
+.site-header.scrolled .brand-mark {
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .brand-badge {
@@ -1273,7 +1290,8 @@ h1, h2, h3, h4, .font-heading {
   .lightbox-next { right: 0.5rem; }
 }
 
-@media (max-width: 768px) {
+/* Below this width the logo, full menu and button no longer fit on one line */
+@media (max-width: 1360px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -1288,16 +1306,41 @@ h1, h2, h3, h4, .font-heading {
     box-shadow: -10px 0 30px rgba(0,0,0,0.8);
     z-index: 99;
   }
-  
+
   .nav-links.active {
     right: 0;
   }
-  
+
   .mobile-nav-toggle {
     display: block;
     z-index: 100;
   }
-  
+}
+
+@media (max-width: 768px) {
+  /* Fit logo, wordmark, button and menu toggle on a phone-width header */
+  .brand-logo {
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+
+  .brand-mark,
+  .site-header.scrolled .brand-mark {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .nav-actions .btn {
+    font-size: 0;
+    gap: 0;
+    padding: 0.7rem;
+  }
+
+  .nav-actions .btn i {
+    font-size: 1rem;
+  }
+
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
