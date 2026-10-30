@@ -595,6 +595,12 @@ h1, h2, h3, h4, .font-heading {
   margin: 0;
 }
 
+.about-text p a {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .about-image-card {
   position: relative;
   border-radius: var(--radius-lg);
@@ -1024,6 +1030,102 @@ h1, h2, h3, h4, .font-heading {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Previous Conferences */
+.history-section {
+  padding: 6rem 0;
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.history-card {
+  padding: 1.5rem;
+}
+
+.history-year {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.history-acronym {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.history-place {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.history-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.history-chairs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.history-chairs li {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.history-more {
+  margin-top: 2.5rem;
+}
+
+/* The summary reuses .btn styling; flex + auto margins centre it and drop the default marker */
+.history-toggle {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  white-space: normal;
+  text-align: center;
+}
+
+.history-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.history-toggle i {
+  transition: var(--transition-fast);
+}
+
+.history-more[open] .history-toggle {
+  margin-bottom: 2.5rem;
+}
+
+.history-more[open] .history-toggle i {
+  transform: rotate(180deg);
+}
+
+.history-more[open] .history-show,
+.history-more:not([open]) .history-hide {
+  display: none;
+}
+
 /* Lightbox Modal */
 .lightbox-modal {
   position: fixed;
@@ -1291,7 +1393,7 @@ h1, h2, h3, h4, .font-heading {
 }
 
 /* Below this width the logo, full menu and button no longer fit on one line */
-@media (max-width: 1360px) {
+@media (max-width: 1400px) {
   .nav-links {
     position: fixed;
     top: 0;
