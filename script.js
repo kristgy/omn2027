@@ -253,24 +253,51 @@ function initCalendarGenerator() {
 function initSubscribeForm() {
   const form = document.getElementById('subscribe-form');
   const emailInput = document.getElementById('email-input');
+  const submitBtn = document.getElementById('btn-subscribe');
 
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  // Sends the form to Brevo the same way Brevo's own embed script does:
+  // a FormData POST to the form URL plus ?isAjax=1, answered with JSON { success, message }.
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (emailInput && emailInput.value) {
-      showToast(`Thank you! ${emailInput.value} subscribed to OMN 2027 updates.`);
-      emailInput.value = '';
+    if (!emailInput || !emailInput.value) return;
+
+    const action = form.getAttribute('action');
+    if (!action) {
+      showToast('Mailing list signups open soon. Please check back later.', true);
+      return;
+    }
+
+    const email = emailInput.value;
+    submitBtn.disabled = true;
+    try {
+      const res = await fetch(`${action}?isAjax=1`, { method: 'POST', body: new FormData(form) });
+      const data = await res.json();
+      if (data.success) {
+        showToast(`Almost done! Check ${email} for a link to confirm your subscription.`);
+        form.reset();
+      } else {
+        showToast(data.message || 'That didn\'t work. Please check your email address and try again.', true);
+      }
+    } catch (err) {
+      showToast('Could not reach the mailing list service. Please try again later.', true);
+    } finally {
+      submitBtn.disabled = false;
     }
   });
 }
 
-function showToast(message) {
+function showToast(message, isError = false) {
   const toast = document.getElementById('toast');
   const toastText = document.getElementById('toast-text');
+  const toastIcon = document.getElementById('toast-icon');
   if (!toast || !toastText) return;
 
   toastText.textContent = message;
+  if (toastIcon) {
+    toastIcon.className = isError ? 'fa-solid fa-circle-exclamation' : 'fa-solid fa-circle-check';
+  }
   toast.classList.add('show');
 
   setTimeout(() => {

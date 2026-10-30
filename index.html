@@ -1308,13 +1308,21 @@
         <p>Subscribe to receive Call for Papers notifications, keynote announcements, and early bird registration
           alerts.</p>
 
-        <form class="subscribe-form" id="subscribe-form">
+        <!-- action: the Brevo signup form; the field names below must match Brevo's form -->
+        <form class="subscribe-form" id="subscribe-form" method="POST"
+          action="https://647c2d27.sibforms.com/v2/serve/MUIFAFLdimL6ZJTU63j4S_psE13LKusZ0RcCjmTJcgSSgw6XedBQuKMmgXFUVIoPag_xlRXlL4BWMZVVlAwUOhPPt3EzzsaanlvN8UvnKoSGTS99633jSWwqwd4KzxGcfZ2OcXBQ8uYxb_M4YTP6aO09FtKbT2VtD524iqJ_8nAQLuA9gnghCjiMkjAYFCGybtUJlNvg6jE8JUwiaA==">
           <input type="email" class="subscribe-input" placeholder="Enter your academic or professional email..."
-            required id="email-input">
+            required id="email-input" name="EMAIL" autocomplete="email">
+          <!-- Brevo's spam trap: must stay empty, so it is hidden from people -->
+          <input type="text" class="subscribe-honeypot" name="email_address_check" value="" tabindex="-1"
+            autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="locale" value="en">
           <button type="submit" class="btn btn-primary" id="btn-subscribe">
             <i class="fa-solid fa-paper-plane"></i> Subscribe
           </button>
         </form>
+        <p class="subscribe-note">We'll only email you about OMN 2027. You'll get a confirmation email first, and
+          every message has an unsubscribe link.</p>
       </div>
     </div>
   </section>
@@ -1400,6 +1408,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notification" id="toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check" id="toast-icon" style="color: var(--accent-cyan); font-size: 1.25rem;"></i>
+    <span id="toast-text"></span>
+  </div>
 
   <script src="script.js"></script>
 </body>
