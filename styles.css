@@ -889,6 +889,14 @@ h1, h2, h3, h4, .font-heading {
   font-size: 0.9rem;
 }
 
+.timeline-note {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 .timeline-status {
   display: inline-block;
   font-size: 0.72rem;
