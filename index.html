@@ -25,7 +25,8 @@
   <link rel="preload" as="image" href="images/web/jann_lipka-summer_in_the_city-12030-1920.webp" fetchpriority="high">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <!-- ?v= makes browsers fetch fresh copies: change it (here and on script.js) whenever styles.css or script.js changes -->
+  <link rel="stylesheet" href="styles.css?v=20261030">
   <!-- Icons load without blocking first paint -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print"
     onload="this.media='all'">
@@ -1313,9 +1314,9 @@
           action="https://647c2d27.sibforms.com/v2/serve/MUIFAFLdimL6ZJTU63j4S_psE13LKusZ0RcCjmTJcgSSgw6XedBQuKMmgXFUVIoPag_xlRXlL4BWMZVVlAwUOhPPt3EzzsaanlvN8UvnKoSGTS99633jSWwqwd4KzxGcfZ2OcXBQ8uYxb_M4YTP6aO09FtKbT2VtD524iqJ_8nAQLuA9gnghCjiMkjAYFCGybtUJlNvg6jE8JUwiaA==">
           <input type="email" class="subscribe-input" placeholder="Enter your academic or professional email..."
             required id="email-input" name="EMAIL" autocomplete="email">
-          <!-- Brevo's spam trap: must stay empty, so it is hidden from people -->
-          <input type="text" class="subscribe-honeypot" name="email_address_check" value="" tabindex="-1"
-            autocomplete="off" aria-hidden="true">
+          <!-- Brevo's spam trap: must stay empty, so it is hidden from people (inline, so a stale stylesheet can't show it) -->
+          <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true"
+            style="position: absolute; left: -9999px;">
           <input type="hidden" name="locale" value="en">
           <button type="submit" class="btn btn-primary" id="btn-subscribe">
             <i class="fa-solid fa-paper-plane"></i> Subscribe
@@ -1415,7 +1416,7 @@
     <span id="toast-text"></span>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261030"></script>
 </body>
 
 </html>
