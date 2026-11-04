@@ -795,6 +795,22 @@ h1, h2, h3, h4, .font-heading {
   font-weight: 600;
 }
 
+/* Technical Program Committee: one alphabetical list flowing down the columns */
+.program-committee {
+  margin-top: 5rem;
+}
+
+.tpc-list {
+  display: block;
+  columns: 3;
+  column-gap: 2rem;
+}
+
+.tpc-list li {
+  break-inside: avoid;
+  margin-bottom: 0.85rem;
+}
+
 /* Timeline / Important Dates */
 .timeline-section {
   padding: 6rem 0;
@@ -1387,6 +1403,10 @@ h1, h2, h3, h4, .font-heading {
     grid-template-columns: 1fr;
   }
 
+  .tpc-list {
+    columns: 2;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1439,6 +1459,10 @@ h1, h2, h3, h4, .font-heading {
 }
 
 @media (max-width: 768px) {
+  .tpc-list {
+    columns: 1;
+  }
+
   /* Fit logo, wordmark, button and menu toggle on a phone-width header */
   .brand-logo {
     gap: 0.5rem;
