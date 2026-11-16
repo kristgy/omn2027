@@ -164,7 +164,7 @@ h1, h2, h3, h4, .font-heading {
 
 /* Wider than the page content so logo, full menu and button fit on one line */
 .site-header .container {
-  max-width: 1440px;
+  max-width: 1520px;
 }
 
 .nav-wrapper {
@@ -207,7 +207,7 @@ h1, h2, h3, h4, .font-heading {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
@@ -756,6 +756,121 @@ h1, h2, h3, h4, .font-heading {
   content: "•";
   color: var(--accent-cyan);
   font-weight: bold;
+}
+
+/* Plenary Speakers */
+.speakers-section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.speakers-section .section-subtitle a {
+  color: var(--accent-cyan);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.speaker-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.speaker-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(251, 191, 36, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.speaker-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-gold);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+  margin-bottom: 1.5rem;
+}
+
+.speaker-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: var(--accent-gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.speaker-name {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.speaker-name a:hover {
+  color: var(--accent-cyan);
+}
+
+.speaker-affiliation {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.speaker-talk {
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.speaker-talk::before {
+  content: "“";
+}
+
+.speaker-talk::after {
+  content: "”";
+}
+
+.speaker-abstract {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.speakers-note {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.speakers-note i {
+  color: var(--accent-cyan);
+  margin-right: 0.35rem;
 }
 
 /* Conference Chairs */
@@ -1464,8 +1579,15 @@ h1, h2, h3, h4, .font-heading {
   .lightbox-next { right: 0.5rem; }
 }
 
+/* Tighter menu spacing keeps logo, full menu and button on one line down to the collapse below */
+@media (max-width: 1599px) {
+  .nav-links {
+    gap: 1.25rem;
+  }
+}
+
 /* Below this width the logo, full menu and button no longer fit on one line */
-@media (max-width: 1400px) {
+@media (max-width: 1439px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -1537,7 +1659,8 @@ h1, h2, h3, h4, .font-heading {
     flex-direction: column;
   }
 
-  .chairs-grid {
+  .chairs-grid,
+  .speakers-grid {
     grid-template-columns: 1fr;
     max-width: 520px;
   }

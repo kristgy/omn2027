@@ -38,7 +38,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
   <!-- ?v= makes browsers fetch fresh copies: change it (here and on script.js) whenever styles.css or script.js changes -->
-  <link rel="stylesheet" href="styles.css?v=20261113">
+  <link rel="stylesheet" href="styles.css?v=20261117">
   <!-- Icons load without blocking first paint -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print"
     onload="this.media='all'">
@@ -68,6 +68,23 @@
       }
     },
     "description": "The premier international annual gathering presenting breakthrough advances in Optical MEMS, micro-optics, nanophotonics, integrated photonics, and quantum optics.",
+    "performer": [
+      {
+        "@type": "Person",
+        "name": "Daoxin Dai",
+        "url": "https://person.zju.edu.cn/en/dxdai",
+        "affiliation": [
+          { "@type": "EducationalOrganization", "name": "Zhejiang University" },
+          { "@type": "EducationalOrganization", "name": "China Jiliang University" }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Lieven Vandersypen",
+        "url": "https://learningforlife.tudelft.nl/instructors/lieven-vandersypen/",
+        "affiliation": { "@type": "EducationalOrganization", "name": "Delft University of Technology" }
+      }
+    ],
     "organizer": {
       "@type": "Organization",
       "name": "OMN 2027 Organizing Committee",
@@ -212,6 +229,7 @@
           <ul class="nav-links" id="nav-links">
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">About OMN</a></li>
+            <li><a href="#speakers">Speakers</a></li>
             <li><a href="#committee">Organizers</a></li>
             <li><a href="#topics">Scope & Topics</a></li>
             <li><a href="#timeline">Key Dates</a></li>
@@ -407,6 +425,60 @@
         <img src="images/sponsors/ieee-photonics-society-lockup-white.png" width="1242" height="259"
           alt="IEEE Photonics Society and IEEE">
       </a>
+    </div>
+  </section>
+
+  <!-- Plenary Speakers. Four plenaries, some shared with Transducers 2027; keep this in step with
+       https://transducers-eurosensors2027.org/program/speakers.html -->
+  <section class="speakers-section" id="speakers">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-microphone-lines"></i> Plenary Program</div>
+        <h2 class="section-title">Plenary <span class="gradient-text">Speakers</span></h2>
+        <p class="section-subtitle">OMN 2027 will feature four plenary talks, some of them shared with
+          <a href="https://transducers-eurosensors2027.org/program/speakers.html" target="_blank"
+            rel="noopener">Transducers 2027</a>. More speakers will be announced.</p>
+      </div>
+
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <img class="speaker-photo" src="images/web/Dai_Daoxin-200.webp" width="100" height="100" loading="lazy"
+            decoding="async" alt="Daoxin Dai">
+          <span class="speaker-badge">Plenary Speaker</span>
+          <h3 class="speaker-name">
+            <a href="https://person.zju.edu.cn/en/dxdai" target="_blank" rel="noopener">Daoxin Dai</a>
+          </h3>
+          <p class="speaker-affiliation">Zhejiang University and China Jiliang University, China</p>
+          <p class="speaker-talk">Switchable Silicon Photonics with Extremely Low Power Consumption</p>
+          <p class="speaker-abstract">
+            How mechanical (MEMS) and piezoelectric (PZT) actuation can make silicon photonic switches, filters and
+            modulators reconfigurable at very low power, including non-volatile devices that keep their state with the
+            power off, for scalable and energy-efficient optical interconnects.
+          </p>
+        </article>
+
+        <article class="speaker-card">
+          <img class="speaker-photo" src="images/web/Vandersypen_Lieven-200.webp" width="100" height="100"
+            loading="lazy" decoding="async" alt="Lieven Vandersypen">
+          <span class="speaker-badge">Plenary Speaker</span>
+          <h3 class="speaker-name">
+            <a href="https://learningforlife.tudelft.nl/instructors/lieven-vandersypen/" target="_blank"
+              rel="noopener">Lieven Vandersypen</a>
+          </h3>
+          <p class="speaker-affiliation">Delft University of Technology, Netherlands</p>
+          <p class="speaker-talk">A Vision for a Semiconductor Quantum Processor</p>
+          <p class="speaker-abstract">
+            Spin qubits, single electrons held in nanoscale transistor-like structures, are among the most promising
+            routes to a quantum computer at scale. The talk covers the basics of semiconductor qubits, sets out a
+            blueprint for a large spin-based quantum processor, and reports recent steps toward building one.
+          </p>
+        </article>
+      </div>
+
+      <p class="speakers-note">
+        <i class="fa-solid fa-circle-info"></i> Plenary talks are open to attendees of both OMN 2027 and Transducers
+        2027.
+      </p>
     </div>
   </section>
 
@@ -1430,6 +1502,7 @@
           <ul class="footer-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About OMN</a></li>
+            <li><a href="#speakers">Plenary Speakers</a></li>
             <li><a href="#topics">Conference Tracks</a></li>
             <li><a href="#timeline">Key Dates</a></li>
             <li><a href="#history">Past Conferences</a></li>
@@ -1500,7 +1573,7 @@
     <span id="toast-text"></span>
   </div>
 
-  <script src="script.js?v=20261031"></script>
+  <script src="script.js?v=20261117"></script>
 </body>
 
 </html>
